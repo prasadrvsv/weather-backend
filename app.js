@@ -2,7 +2,29 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.get('/data/2.5/weather', get_weather)
+const key = "eyJ1c2VyIjoicmFqYWxpbnYiLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.rPaPZqtAUvJfaEgZp7y44POhq84ZMpYgY9TPkHah_Gk"
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+app.get('/v1/hello', (req, res) => {
+  res.send('Hello World!')
+  })
+
+app.post('/v1/auth', (req, res) => {
+  // res.send('Auth Success')
+  username = req.body.username
+  password = req.body.password
+  if (username == "rajalinv" && password == "password"){
+    token = {
+      "jwt" : key,
+      //"expires": expiry 
+   }
+   res.json(token)
+
+}
+  })
+app.get('/v1/weather', get_weather)
 function get_weather(req,response)
 {
 response.json(
