@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const key = "eyJ1c2VyIjoicmFqYWxpbnYiLCJwYXNzd29yZCI6InBhc3N3b3JkIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.rPaPZqtAUvJfaEgZp7y44POhq84ZMpYgY9TPkHah_Gk"
+const key = "JWT Token"
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
