@@ -3,17 +3,17 @@ const app = express()
 const port = 3000
 
 
-app.get('/v1/hello', (req, res) => {
-  res.send('Hello World!')
-  })
+// app.get('/v1/hello', (req, res) => {
+//   res.send('Hello World!')
+//   })
 
-app.post('/v1/auth', (req, res) => {
-  res.send('Auth Success')
-  })
+// app.post('/v1/auth', (req, res) => {
+//   res.send('Auth Success')
+//   })
 
-app.get('/v1/weather', get_weather)
+// app.get('/v1/weather', get_weather)
 
-
+app.get('/data/2.5/weather', get_weather)
 function get_weather(req,response)
 {
 response.json(
